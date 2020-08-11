@@ -7,7 +7,6 @@
 		<groupId>com.md</groupId>
 		<artifactId>spring-boot2-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<artifactId>sprint-boot2-autotest</artifactId>
@@ -70,6 +69,7 @@
 					<argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
+					<argLine>-Dfile.encoding=UTF-8</argLine>
 					<properties>
 						<property>
 							<name>listener</name>
