@@ -23,7 +23,7 @@ public class InitRest {
 
 	protected static Logger logger = LoggerFactory.getLogger(InitRest.class);
 
-	@Resource
+	@Resource//和@Autowired 类似 可以按照名称和类型来注入Bean
 	private RocketMQTemplate rocketMQTemplate;
 
 	@GetMapping("/hello")
