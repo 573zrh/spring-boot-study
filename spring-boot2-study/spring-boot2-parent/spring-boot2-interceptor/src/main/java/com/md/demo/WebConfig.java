@@ -11,11 +11,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  * 
  * @author Minbo.He
  */
-@Configuration
+@Configuration//用 @Configuration 加载spring容器
 public class WebConfig extends WebMvcConfigurationSupport {
 
 	// 让bean提前加载，让拦截器中的@Autowired生效
-	@Bean
+	@Bean//@Bean将MyHttpInterceptor对象注册到spring容器中
 	public HandlerInterceptor getMyInterceptor() {
 		return new MyHttpInterceptor();
 	}
