@@ -14,7 +14,7 @@ import com.md.demo.service.DemoService;
  * @author Minbo.He
  *
  */
-@Component
+@Component//泛指各种组件，就是说当我们的类不属于各种归类的时候,使用@Component来标注这个类。
 public class ScheduledTasks {
 
 	protected static Logger logger = LoggerFactory.getLogger(ScheduledTasks.class);
@@ -30,14 +30,14 @@ public class ScheduledTasks {
 	 */
 
 	// 启动立即执行
-	// 每5秒执行一次
-	@Scheduled(initialDelay = 1000, fixedDelay = 5000)
+	// 每5秒执行一次 是表示上次任务执行完毕后的5秒再执行
+	@Scheduled(initialDelay = 1000, fixedDelay = 5000) //@Scheduled 配置具体任务的执行方式和时间
 	public void test1() {
 		logger.info("test1这里，每5秒执行一次。DemoService --->>> " + this.service.sayHello());
 	}
 
-	// 每5秒执行一次
-	@Scheduled(initialDelay = 1000, fixedDelay = 5000)
+	// 每5秒执行一次  fixedRate 已经划分好了执行时间，每5秒立即执行
+	@Scheduled(initialDelay = 1000, fixedRate = 5000)
 	public void test2() {
 		logger.info("test2这里，每5秒执行一次");
 	}
@@ -52,7 +52,7 @@ public class ScheduledTasks {
 	
 	// 固定时间才执行，即为10秒的整数倍执行，比如20秒，30秒，40秒时，会执行
 	// 每10秒执行一次
-	@Scheduled(cron = "*/10 * * * * *")
+	@Scheduled(cron = "*/10 * * * * *")     //根据cron表达式来执行任务
 	public void test3() {
 		logger.info("test3这里，每10秒执行一次");
 	}

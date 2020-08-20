@@ -12,8 +12,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  *
  */
 @SpringBootApplication
-@EnableScheduling
-@EnableAsync
+@EnableScheduling//开启定时任务，扫描所有启动项
+@EnableAsync//开启异步支持
 public class Application {
 
 	public static void main(String[] args) {

@@ -24,7 +24,7 @@ public class ScheduledTasksAsync {
 
 	// 启动立即执行
 	// 每5秒执行一次
-	@Async
+	@Async //异步注解
 	@Scheduled(initialDelay = 1000, fixedDelay = 5000)
 	public void test4() {
 		logger.info("test4这里，每5秒执行一次");
