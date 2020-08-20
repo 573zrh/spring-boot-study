@@ -3,13 +3,21 @@ server:
   port: 9090
 spring:
   # mq service
-  rocketmq: 
+  rocketmq:
+    #mq 服务器地址加端口
     name-server: localhost:9876
-    producer: 
+    producer:
+      #组
       group: my-mq-group
+      #最大超时时间
       send-message-timeout: 86400
+      #压缩消息体的起止大小
       compress-message-body-threshold: 4096
+      #消息体最大
       max-message-size: 4194304
+      #异步发送失败重试次数
       retry-times-when-send-async-failed: 0
+      #重试下个服务
       retry-next-server: true
+      #同步发送失败重试次数
       retry-times-when-send-failed: 2
