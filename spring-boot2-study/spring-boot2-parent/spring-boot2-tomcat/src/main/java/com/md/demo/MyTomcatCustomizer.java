@@ -15,17 +15,17 @@ import org.springframework.context.annotation.Configuration;
  *         当和配置application.yml一起都配置时，以配置文件为准。想要代码生效，可把文件重命名为application.yml.bak
  */
 @Configuration
-public class MyTomcatCustomizer {
+public class MyTomcatCustomizer {//Customizer定制
 
 	@Bean
 	public ConfigurableServletWebServerFactory configurableServletWebServerFactory() {
 		TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
-		tomcat.addAdditionalTomcatConnectors(createConnector());
+		tomcat.addAdditionalTomcatConnectors(createConnector());//Additional 额外的
 		return tomcat;
 	}
 
 	private Connector createConnector() {
-		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");  //Non-blocking NIO connector，即非阻塞连接池。
 		Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
 		connector.setPort(8090);
 		// 最大线程数
