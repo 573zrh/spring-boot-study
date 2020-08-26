@@ -6,7 +6,9 @@
     <typeAliases>
         <package name="com.md"/>
     </typeAliases>
+<!--    mappers 标签就是用来配置需要加载的 sql 映射配置文件路径的-->
     <mappers>
-    		<mapper resource="mybatis/mapper/CityMapper.xml"/>
+        <mapper resource="mybatis/mapper/CityMapper.xml"/>
+       <!-- <mapper class="com.md.demo.dao.CityDao"/>-->
     </mappers>
 </configuration>

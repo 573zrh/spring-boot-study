@@ -1,7 +1,7 @@
 spring: 
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.1.101:3306/cfdb?useUnicode=true&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.65.131:3306/spring-boot-test?useUnicode=true&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&useSSL=false
     username: root
     password: 123456
 server:
