@@ -1,6 +1,9 @@
 spring: 
   datasource:
+    #mysql5.7需要使用 com.mysql.cj.jdbc.Driver
     driverClassName: com.mysql.cj.jdbc.Driver
+    #mysql 6以上需要设置时区 serverTimezone=UTC UTC指的是世界时
+    #useUnicode=true&characterEncoding=UTF-8 指定字符的编码 解码格式
     url: jdbc:mysql://192.168.65.131:3306/spring-boot-test?useUnicode=true&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&useSSL=false
     username: root
     password: 123456

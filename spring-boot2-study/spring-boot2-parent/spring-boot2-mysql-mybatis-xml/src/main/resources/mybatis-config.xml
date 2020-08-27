@@ -10,5 +10,15 @@
     <mappers>
         <mapper resource="mybatis/mapper/CityMapper.xml"/>
        <!-- <mapper class="com.md.demo.dao.CityDao"/>-->
+
+        <!-- 采用绝对路径来读取Mapper配置文件
+        <mapper url="f"/>
+        -->
+        <!-- 使用接口信息来配置Mapper
+        <mapper class=""/>
+        -->
+        <!-- 直接获取接口所在包 进行配置
+        <package name="org.mybatis.mappers"/>
+        -->
     </mappers>
 </configuration>
