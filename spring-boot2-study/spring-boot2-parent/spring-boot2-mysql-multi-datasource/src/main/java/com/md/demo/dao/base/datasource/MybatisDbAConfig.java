@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @Configuration
-@MapperScan(basePackages = {"mybatis.mapper"}, sqlSessionFactoryRef = "sqlSessionFactory1")
+@MapperScan(basePackages = {"com.md.demo.dao.datasource"}, sqlSessionFactoryRef = "sqlSessionFactory1")
 public class MybatisDbAConfig {
 
 	private String localMapper = "classpath:mybatis/mapper/*.xml";

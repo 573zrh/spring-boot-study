@@ -1,7 +1,9 @@
 spring:
-  datasource: 
-    master: 
-      jdbc-url: jdbc:mysql://192.168.65.131:3306/spring-boot-test?useUnicode=true&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&useSSL=false
+  datasource:
+    #主库
+    master:
+      #公司 127.0.0.1
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/spring-boot-test?useUnicode=true&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&useSSL=false
       username: root
       password: 123456
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -18,14 +20,16 @@ spring:
       ## 数据库连接超时时间,默认30秒，即30000
       connection-timeout: 20000
       ## 空闲连接存活最大时间，默认600000（10分钟）
-      idle-timeout=180000
+      idle-timeout: 180000
       ## 此属性控制从池返回的连接的默认自动提交行为,默认值：true
-      auto-commit=true
+      auto-commit: true
       ## 连接测试语句
       connection-test-query: SELECT 1
       validation-timeout: 5000
-    slave: 
-      jdbc-url: jdbc:mysql://192.168.65.131:3306/spring-boot-test?useUnicode=true&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    #分库
+    slave:
+      #公司 127.0.0.1
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/spring-boot-test?useUnicode=true&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&useSSL=false
       username: root
       password: 123456
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -38,9 +42,9 @@ spring:
       connection-timeout: 20000
       connection-test-query: SELECT 1
       validation-timeout: 5000
+#tomcat容器
 server:
+  #端口号
   port: 9090
 mybatis:
   config-location: classpath:mybatis-config.xml
-  #config-location: classpath:mybatis/mapper/*.xml
-  #mapper-locations: classpath:mybatis/mapper/*.xml
